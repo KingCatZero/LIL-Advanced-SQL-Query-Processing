@@ -4,7 +4,7 @@ SELECT
 	,an.Breed
 	,an.Primary_Color
 	,v.Vaccination_Time
-	,v.Name
+	,v.Vaccine
 	,v.First_Name
 	,v.Last_Name
 	,v.Role
@@ -14,7 +14,7 @@ FROM [dbo].[Animals] AS an
 			v.Name
 			,v.Species
 			,v.Vaccination_Time
-			,v.Name AS Vaccine_Name
+			,v.Vaccine
 			,p.First_Name
 			,p.Last_Name
 			,sa.Role
