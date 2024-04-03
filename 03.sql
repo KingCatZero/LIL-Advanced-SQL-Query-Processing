@@ -9,7 +9,6 @@ FROM [dbo].[Animals] AS an
 		v.Name = an.Name
 		AND v.Species = an.Species
 		AND v.Vaccine != 'Rabies'
-		AND v.Vaccination_Time < '2019-10-01'
 WHERE
 	an.Species != 'Rabbit'
 GROUP BY
@@ -17,3 +16,6 @@ GROUP BY
 	,an.Species
 	,an.Primary_Color
 	,an.Breed
+HAVING
+	MAX(v.Vaccination_Time) < '2019-10-01'
+	OR MAX(v.Vaccination_Time) IS NULL
